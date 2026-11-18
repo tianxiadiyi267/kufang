@@ -1,0 +1,67 @@
+{
+  "name": "warehouse-desktop-v2",
+  "version": "2.0.2",
+  "productName": "库房管理系统-桌面版 V2",
+  "description": "库房管理系统教师端 · Windows 桌面版（免登录优化版）",
+  "private": true,
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.local.warehouse.desktop.v2",
+    "productName": "库房管理系统-桌面版 V2",
+    "copyright": "Copyright © 2026 学校库房管理系统课程项目",
+    "directories": {
+      "output": "release4",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "app/**/*",
+      "resources/app.ico",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "seed/seed.db",
+        "to": "seed/seed.db"
+      }
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "executableName": "库房管理系统-桌面版 V2"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "库房管理系统-桌面版 V2",
+      "installerLanguages": [
+        "zh_CN"
+      ],
+      "language": "2052",
+      "runAfterFinish": false,
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "库房管理系统-桌面版 V2 Setup ${version}.exe"
+    },
+    "electronDist": "node_modules/electron/dist"
+  },
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0",
+    "ws": "^8.22.1"
+  }
+}

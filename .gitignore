@@ -1,0 +1,27 @@
+# 依赖
+node_modules/
+
+# 打包产物
+release/
+release*/
+dist/
+out/
+pkgtest*/
+installtest*/
+verify*/
+*.exe
+*.blockmap
+*.asar
+
+# 运行与构建产物
+*.log
+__pycache__/
+*.pyc
+testdata/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
